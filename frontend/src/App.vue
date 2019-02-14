@@ -12,6 +12,7 @@ import CardHeader from "./components/layout/CardHeader";
 import Cards from "./components/Cards";
 
 import axios from "axios";
+axios.defaults.withCredentials = true;
 
 export default {
   name: "app",
@@ -60,7 +61,7 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:51904/api/Trips", this.config )
+      .get("http://localhost:51904/api/Trips",{withCredentials:true})
       .then(res => (this.trips = res.data))
       .catch(err => console.log("Error: " + err));
   }

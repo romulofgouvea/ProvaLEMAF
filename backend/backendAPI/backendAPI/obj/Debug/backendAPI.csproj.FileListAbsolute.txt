@@ -65,3 +65,6 @@ C:\Users\Romim\Projetos\ProvaLEMAF\backend\backendAPI\backendAPI\bin\pt-br\Syste
 C:\Users\Romim\Projetos\ProvaLEMAF\backend\backendAPI\backendAPI\obj\Debug\backendAPI.csproj.CopyComplete
 C:\Users\Romim\Projetos\ProvaLEMAF\backend\backendAPI\backendAPI\obj\Debug\backendAPI.dll
 C:\Users\Romim\Projetos\ProvaLEMAF\backend\backendAPI\backendAPI\obj\Debug\backendAPI.pdb
+C:\Users\Romim\Projetos\ProvaLEMAF\backend\backendAPI\backendAPI\bin\System.Web.Cors.dll
+C:\Users\Romim\Projetos\ProvaLEMAF\backend\backendAPI\backendAPI\bin\System.Web.Http.Cors.dll
+C:\Users\Romim\Projetos\ProvaLEMAF\backend\backendAPI\backendAPI\bin\System.Web.Http.Cors.xml
