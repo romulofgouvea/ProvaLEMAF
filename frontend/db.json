@@ -1,0 +1,87 @@
+{
+    "City": [
+        {
+            "city_id": 130,
+            "city_name": "Lavras"
+        },
+        {
+            "city_id": 131,
+            "city_name": "São Paulo"
+        },
+        {
+            "city_id": 132,
+            "city_name": "Dubai"
+        },
+        {
+            "city_id": 133,
+            "city_name": "Rio de Janeiro"
+        }
+    ],
+    "Trips": [
+        {
+            "trip_city": 130,
+            "trip_id": 1,
+            "trip_url_image": "http://www.smartrisair.com.br/public/assets/node_modules/semantic-ui/examples/assets/images/wireframe/image.png",
+            "trip_name": "Local 1",
+            "trip_desc": "Desc Local 1",
+            "trip_coin": "€",
+            "trip_rate": 4,
+            "trip_date": "02/14/2019",
+            "trip_class": 1,
+            "trip_guest": 1,
+            "trip_cost": 800
+          },
+          {
+            "trip_city":132,
+            "trip_id": 2,
+            "trip_url_image": "http://www.smartrisair.com.br/public/assets/node_modules/semantic-ui/examples/assets/images/wireframe/image.png",
+            "trip_name": "Local 2",
+            "trip_desc": "Desc Local 2",
+            "trip_coin": "€",
+            "trip_rate": 5,
+            "trip_date": "02/14/2019",
+            "trip_class": 1,
+            "trip_guest": 1,
+            "trip_cost": 800
+          },
+          {
+            "trip_city":132,
+            "trip_id": 3,
+            "trip_url_image": "http://www.smartrisair.com.br/public/assets/node_modules/semantic-ui/examples/assets/images/wireframe/image.png",
+            "trip_name": "Local 3",
+            "trip_desc": "Desc Local 3",
+            "trip_coin": "€",
+            "trip_rate": 4.5,
+            "trip_date": "02/14/2019",
+            "trip_class": 1,
+            "trip_guest": 1,
+            "trip_cost": 800
+          },
+          {
+            "trip_city":131,
+            "trip_id": 4,
+            "trip_url_image": "http://www.smartrisair.com.br/public/assets/node_modules/semantic-ui/examples/assets/images/wireframe/image.png",
+            "trip_name": "Local 4",
+            "trip_desc": "Desc Local 4",
+            "trip_coin": "€",
+            "trip_rate": 3,
+            "trip_date": "02/14/2019",
+            "trip_class": 1,
+            "trip_guest": 1,
+            "trip_cost": 800
+          },
+          {
+            "trip_city":130,
+            "trip_id": 5,
+            "trip_url_image": "http://www.smartrisair.com.br/public/assets/node_modules/semantic-ui/examples/assets/images/wireframe/image.png",
+            "trip_name": "Local 5",
+            "trip_desc": "Desc Local 5",
+            "trip_coin": "€",
+            "trip_rate": 3,
+            "trip_date": "02/14/2019",
+            "trip_class": 3,
+            "trip_guest": 1,
+            "trip_cost": 800
+          }
+    ]
+}
