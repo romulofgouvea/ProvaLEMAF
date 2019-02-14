@@ -22,6 +22,10 @@ export default {
   },
   data() {
     return {
+      BASE_URL:"http://localhost:51904/api",
+      config:{
+        headers: {'Access-Control-Allow-Origin': '*'}
+      },
       trips: []
     };
   },
@@ -29,14 +33,14 @@ export default {
     searchTrips(searchTrips) {
       //http://localhost/Trips/City/{id da cidade}
       //http://localhost/Trips/GetTripsByCity?id={id da cidade}
-      console.log(searchTrips)
+      // console.log(searchTrips)
       axios
-        .get("http://localhost:3000/City")
+        .get(this.BASE_URL+"/City")
         .then(resCity => resCity.data.filter( filCity => {
             if(searchTrips.city_name === filCity.city_name){
               console.log("Cidade: ", filCity.city_name,filCity.city_id)
               return axios
-                .get("http://localhost:3000/Trips?trip_city="+filCity.city_id)
+                .get(this.BASE_URL+"/Trips?trip_city="+filCity.city_id)
                 .then(resTrips => {
                   let arrayTemp = []
                   resTrips.data.filter( filTrips => {
@@ -54,16 +58,9 @@ export default {
         .catch(err => console.log("Error: " + err));
     }
   },
-  computed: {
-    // filteredList(searchTrips) {
-    //   return this.trips.filter(trip => {
-    //     return trip.trip_city.includes(id);
-    //   });
-    // }
-  },
   created() {
     axios
-      .get("http://localhost:3000/Trips")
+      .get("http://localhost:51904/api/Trips", this.config )
       .then(res => (this.trips = res.data))
       .catch(err => console.log("Error: " + err));
   }
