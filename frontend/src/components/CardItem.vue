@@ -1,49 +1,55 @@
 <template>
-    <div class="card-item" v-on:click="OnClickCard($event)">
-        <span class="card-name">{{trip.trip_name}} {{trip.trip_city}}</span>
-        <span class="card-desc">{{trip.trip_desc}}</span>
-        <span class="card-cost">{{trip.trip_cost}}</span>
-        <span class="card-cost">{{trip.trip_coin}}</span>
+  <div class v-on:click="OnClickCard($event)">
+    <div class="row no-gutters">
+      <div class="card-image">
+        <img src="//placehold.it/150" alt>
+        <!-- <img src="{{trip.trip_url_image}}" alt> -->
+      </div>
+      <div class="card-content px-2 ml-2 mr-2">
+        <div class="card-rate">
+          <star-rating
+            v-bind:show-rating="false"
+            v-bind:star-size="10"
+            v-bind:increment="0.5"
+            :rating="trip.trip_rate"
+          ></star-rating>
+        </div>
+        <h4 class="card-name">{{trip.trip_name}}</h4>
+        <p class="card-desc">{{trip.trip_desc}}</p>
+        <h4 class="card-cost">{{trip.trip_cost}} {{trip.trip_coin}}</h4>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
+import StarRating from "vue-star-rating";
+
 export default {
-    name:"CardItem",
-    props:["trip"],
-    methods:{
-        OnClickCard: function(event) {
-            console.log("Clicked");
-        }
+  name: "CardItem",
+  props: ["trip"],
+  components: {
+    StarRating
+  },
+  methods: {
+    OnClickCard: function(event) {
+      console.log("Clicked");
     }
-}
+  }
+};
 </script>
 
 <style scoped>
-    .card-item{
-        border: 1px #eee solid;
-        border-radius: 10px;
-        margin: 16px 0;
-        -webkit-box-shadow: 0px 0px 2px 1px rgba(238,238,238,1);
-        -moz-box-shadow: 0px 0px 2px 1px rgba(238,238,238,1);
-        box-shadow: 0px 0px 2px 1px rgba(238,238,238,1);
-    }
-    .card-rate{
-        padding-top: 16px;
-        padding-bottom: 8px;
-    }
-    .card-name{
-        color: #8D93A2;
-        font-size: 1.2em;
-        font-weight: bold;
-    }
-    .card-desc{
-        color: #D1D5DE;
-        font-size: 0.875;
-    }
-    .card-cost{
-        color: #30AAFF;
-        font-size: 1em;
-    }
-
+img {
+  max-width: 150px;
+}
+.card-content {
+  flex-grow: 1;
+}
+.card-rate {
+  padding-top: 16px;
+}
+.card-cost {
+  float: left;
+}
 </style>

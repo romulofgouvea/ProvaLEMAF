@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <CardHeader v-on:search-trips="searchTrips"/>
-    <Cards class="container" v-bind:trips="trips"/>
+    <Cards v-bind:trips="trips"/>
   </div>
 </template>
 
@@ -23,8 +23,7 @@ export default {
   },
   data() {
     return {
-      BASE_URL:"http://localhost:3000",
-      // BASE_URL:"http://localhost:51904/api",
+      BASE_URL:"http://localhost:64154/api",
       config:{
         headers: {'Access-Control-Allow-Origin': '*'}
       },
@@ -70,6 +69,8 @@ export default {
 </script>
 
 <style>
+
+/* iniital config */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -80,4 +81,27 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
 }
+
+.contain{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* props config */
+input, input::placeholder, select {
+  border: none;
+  color: #2acfff !important;
+}
+
+/* make solution */
+.none {
+  padding-right: 0 !important;
+  border: none;
+  text-decoration: none;
+  color: #2acfff !important;
+}
+
 </style>

@@ -1,8 +1,0 @@
-version: '3.4'
-
-services:
-  backendapi:
-    image: ${DOCKER_REGISTRY-}backendapi
-    build:
-      context: .\backendAPI
-      dockerfile: Dockerfile

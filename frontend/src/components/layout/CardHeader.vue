@@ -1,29 +1,44 @@
 <template>
-  <div class="container">
+  <div class="contain">
     <form @submit="searchTrips">
       <div class="card card-sobre">
         <div class="card-body">
-
           <div class="row">
-
             <div class="input-group col-4 col-md-3 mb-3 none">
               <div class="input-group-prepend">
-                <span class="input-icon" id="basic-addon1"><i class="material-icons">location_on</i></span>
+                <span class="input-icon" id="basic-addon1">
+                  <i class="material-icons">location_on</i>
+                </span>
               </div>
-              <input type="text" class="form-input" v-model="city_name" name="city_name" placeholder="Dubai,UAE">
+              <input
+                type="text"
+                class="form-input"
+                v-model="city_name"
+                name="city_name"
+                placeholder="Pick a city"
+              >
             </div>
 
             <div class="input-group col-4 col-md-3 mb-3 none">
               <div class="input-group-prepend">
-                <span class="input-icon" id="basic-addon1"><i class="material-icons">calendar_today</i></span>
+                <span class="input-icon" id="basic-addon1">
+                  <i class="material-icons">calendar_today</i>
+                </span>
               </div>
-              <datepicker v-model="city_date" class="form-input date-input" name="city_date" style="border: none"></datepicker>
-              
+
+              <datepicker
+                v-model="city_date"
+                class="form-input date-input"
+                name="city_date"
+                style="border: none"
+              ></datepicker>
             </div>
 
             <div class="input-group col-4 col-md-2 mb-3 none">
               <div class="input-group-prepend">
-                <span class="input-icon" id="basic-addon1"><i class="material-icons">person</i></span>
+                <span class="input-icon" id="basic-addon1">
+                  <i class="material-icons">person</i>
+                </span>
               </div>
               <select v-model="city_guest" class="form-input">
                 <option
@@ -34,9 +49,11 @@
               </select>
             </div>
 
-            <div class="input-group col-4 col-md-2 mb-3 none">
+            <div class="input-group col-4 col-md-2 input-icon2 none">
               <div class="input-group-prepend">
-                <span class="input-icon" id="basic-addon1"><i class="material-icons">class</i></span>
+                <span class="input-icon" id="basic-addon1">
+                  <i class="material-icons">class</i>
+                </span>
               </div>
               <select v-model="city_class" class="form-input">
                 <option
@@ -47,17 +64,28 @@
               </select>
             </div>
 
-            <div class="input-group col-4 col-md-1 mb-3 none">
+            <div class="input-group col-4 col-md-1 input-icon2 none">
               <div class="input-group-prepend">
-                <span class="input-icon" id="basic-addon1"><i class="material-icons">credit_card</i></span>
+                <span class="input-icon" id="basic-addon1">
+                  <i class="material-icons">credit_card</i>
+                </span>
               </div>
-              <input type="number" class="form-input" v-model="city_cost" name="city_cost" placeholder="800">
+              <input
+                type="number"
+                class="form-input"
+                v-model="city_cost"
+                name="city_cost"
+                placeholder="800"
+              >
             </div>
-
-          </div><!-- row -->
+            <div class="input-group col-4 col-md-1 input-icon2 none">
+              <div class="input-group-prepend"></div>
+              <input type="submit" value="Submit" class="btn">
+            </div>
+          </div>
+          <!-- row -->
         </div>
       </div>
-      <input type="submit" value="Submit">
     </form>
   </div>
 </template>
@@ -111,19 +139,23 @@ export default {
 </script>
 
 <style>
-i{
+i {
   font-size: 16px !important;
 }
+
+.btn{
+  font-size: 0.775rem;
+  background: none;
+}
+
 .card-sobre {
   margin-top: -60px;
   z-index: 99;
+  margin-bottom: 16px;
 }
-.none {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-  border: none;
-  text-decoration: none;
-  color: #2acfff !important;
+
+.card .card-body {
+  border: none !important;
 }
 
 .input-icon {
@@ -131,7 +163,7 @@ i{
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  padding:0 0 0 0.25em;
+  padding: 0 0 0 0.25em;
   margin-bottom: 0;
   font-size: 0.775rem;
   font-weight: 400;
@@ -157,9 +189,32 @@ i{
   border: none !important;
 }
 
-.date-input{
-  width: 100%;
-  border: none !important;
+.date-input {
+  padding-top: 6px;
 }
 
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+
+@media (min-width: 768px) {
+  .input-icon2 {
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+  .mr-3 {
+    margin-right: 0 !important;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+}
 </style>
