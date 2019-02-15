@@ -1,33 +1,62 @@
 <template>
-  <div class="card card-header">
+  <div class="container">
     <form @submit="searchTrips">
-      <input type="text" v-model="city_name" name="city_name" placeholder="Dubai,UAE">
-      <!-- <input type="date" v-model="city_date" name="city_date"> -->
-      
-      <datepicker v-model="city_date" name="city_date"></datepicker>
+      <div class="card card-sobre">
+        <div class="card-body">
 
-      <button class="btn btn-default" type="button" title="Toggle" data-toggle>
-        <i class="fa fa-calendar">
-          <span aria-hidden="true" class="sr-only">Toggle</span>
-        </i>
-      </button>
-      
-      <select v-model="city_guest">
-        <option
-          v-for="option in optionsGuest"
-          v-bind:key="option.value"
-          v-bind:value="option.value"
-        >{{ option.text }}</option>
-      </select>
-      <select v-model="city_class">
-        <option
-          v-for="option in optionsClass"
-          v-bind:key="option.value"
-          v-bind:value="option.value"
-        >{{ option.text }}</option>
-      </select>
-      
-      <input type="number" v-model="city_cost" name="city_cost" placeholder="800">
+          <div class="row">
+
+            <div class="input-group col-4 col-md-3 mb-3 none">
+              <div class="input-group-prepend">
+                <span class="input-icon" id="basic-addon1"><i class="material-icons">location_on</i></span>
+              </div>
+              <input type="text" class="form-input" v-model="city_name" name="city_name" placeholder="Dubai,UAE">
+            </div>
+
+            <div class="input-group col-4 col-md-3 mb-3 none">
+              <div class="input-group-prepend">
+                <span class="input-icon" id="basic-addon1"><i class="material-icons">calendar_today</i></span>
+              </div>
+              <datepicker v-model="city_date" class="form-input date-input" name="city_date" style="border: none"></datepicker>
+              
+            </div>
+
+            <div class="input-group col-4 col-md-2 mb-3 none">
+              <div class="input-group-prepend">
+                <span class="input-icon" id="basic-addon1"><i class="material-icons">person</i></span>
+              </div>
+              <select v-model="city_guest" class="form-input">
+                <option
+                  v-for="option in optionsGuest"
+                  v-bind:key="option.value"
+                  v-bind:value="option.value"
+                >{{ option.text }}</option>
+              </select>
+            </div>
+
+            <div class="input-group col-4 col-md-2 mb-3 none">
+              <div class="input-group-prepend">
+                <span class="input-icon" id="basic-addon1"><i class="material-icons">class</i></span>
+              </div>
+              <select v-model="city_class" class="form-input">
+                <option
+                  v-for="option in optionsClass"
+                  v-bind:key="option.value"
+                  v-bind:value="option.value"
+                >{{ option.text }}</option>
+              </select>
+            </div>
+
+            <div class="input-group col-4 col-md-1 mb-3 none">
+              <div class="input-group-prepend">
+                <span class="input-icon" id="basic-addon1"><i class="material-icons">credit_card</i></span>
+              </div>
+              <input type="number" class="form-input" v-model="city_cost" name="city_cost" placeholder="800">
+            </div>
+
+          </div><!-- row -->
+        </div>
+      </div>
       <input type="submit" value="Submit">
     </form>
   </div>
@@ -82,32 +111,55 @@ export default {
 </script>
 
 <style>
-.card-header {
-  border: 1px #eee solid;
-  border-radius: 10px;
-
-  color: #2eafff !important;
-  width: 100%;
+i{
+  font-size: 16px !important;
+}
+.card-sobre {
+  margin-top: -60px;
   z-index: 99;
-  padding: 10px;
-  background-color: white;
-
-  -webkit-box-shadow: 0px 0px 2px 1px rgba(238, 238, 238, 1);
-  -moz-box-shadow: 0px 0px 2px 1px rgba(238, 238, 238, 1);
-  box-shadow: 0px 0px 2px 1px rgba(238, 238, 238, 1);
+}
+.none {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  border: none;
+  text-decoration: none;
+  color: #2acfff !important;
 }
 
-.flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.input-icon {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
   align-items: center;
-  justify-content: center;
-}
-.flex-item {
-  font-weight: bold;
-  font-size: 1.5em;
+  padding:0 0 0 0.25em;
+  margin-bottom: 0;
+  font-size: 0.775rem;
+  font-weight: 400;
+  line-height: 1.2;
   text-align: center;
+  white-space: nowrap;
 }
+.input-group > .form-input {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+.form-input {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.45rem + 2px);
+  padding: 0 0 0 0.35em;
+  font-size: 0.775rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border: none !important;
+}
+
+.date-input{
+  width: 100%;
+  border: none !important;
+}
+
 </style>

@@ -23,7 +23,7 @@ export default {
     .card-item{
         border: 1px #eee solid;
         border-radius: 10px;
-        margin: 16px;
+        margin: 16px 0;
         -webkit-box-shadow: 0px 0px 2px 1px rgba(238,238,238,1);
         -moz-box-shadow: 0px 0px 2px 1px rgba(238,238,238,1);
         box-shadow: 0px 0px 2px 1px rgba(238,238,238,1);

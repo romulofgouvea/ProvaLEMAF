@@ -2,7 +2,7 @@
   <div id="app">
     <Header/>
     <CardHeader v-on:search-trips="searchTrips"/>
-    <Cards v-bind:trips="trips"/>
+    <Cards class="container" v-bind:trips="trips"/>
   </div>
 </template>
 
@@ -23,7 +23,8 @@ export default {
   },
   data() {
     return {
-      BASE_URL:"http://localhost:51904/api",
+      BASE_URL:"http://localhost:3000",
+      // BASE_URL:"http://localhost:51904/api",
       config:{
         headers: {'Access-Control-Allow-Origin': '*'}
       },
@@ -61,7 +62,7 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:51904/api/Trips",{withCredentials:true})
+      .get(this.BASE_URL+"/Trips",{withCredentials:true})
       .then(res => (this.trips = res.data))
       .catch(err => console.log("Error: " + err));
   }
