@@ -41,7 +41,13 @@ Navegue até a pasta onde baixou os arquivos e abra um terminal a partir da past
 ProvaLEMAF -> frontend
 ```
 
-e execulte o comando no terminal:
+e execulte o comando no terminal para que baixe os arquivos do node_modules necessários para a execução do  projeto:
+
+```bash
+npm install
+```
+
+Para executar o projeto execute o dcomando abaixo no terminal:
 
 ```bash
 npm run serve
