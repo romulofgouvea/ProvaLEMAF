@@ -1,3 +1,33 @@
 <div>
-    <h1>TRIP</h1>
+    <Header />
+
+    <div class="contain fFooter">
+        <div class="card card-sobre">
+            <div class="card-body">
+                <div style="display:flex">
+                    <i class="material-icons" v-on:click="OnClickIcon()">arrow_back</i>
+                    <h2 class="card-name">{{trip.trip_name}}</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-image">
+            <!-- <img src="//placehold.it/150" alt> -->
+            <img class="rounded-left" v-bind:src="trip.trip_url_image" alt>
+        </div>
+        <div class="card-content px-2 ml-2 mr-2">
+            <div class="card-rate">
+                <star-rating v-bind:show-rating="false" v-bind:star-size="10" v-bind:increment="0.5"
+                    :rating="trip.trip_rate"></star-rating>
+            </div>
+            <p class="card-desc">{{trip.trip_desc}}</p>
+        </div>
+
+    </div>
+    <!-- <h4 class="card-cost">  {{trip.trip_cost}},00 {{trip.trip_coin}} </h4> -->
+
+    <div class="footer fixed-bottom">
+        {{trip.trip_cost}},00 {{trip.trip_coin}}
+    </div>
+</div>
 </div>

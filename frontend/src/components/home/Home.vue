@@ -18,8 +18,8 @@ export default {
   },
   data() {
     return {
-      BASE_URL: "http://localhost:3000", //Teste
-      // BASE_URL:"http://localhost:64154/api",
+      // BASE_URL: "http://localhost:3000", //Teste
+      BASE_URL:"http://localhost:64154/api",
       trips: []
     };
   },

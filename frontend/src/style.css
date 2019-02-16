@@ -28,6 +28,11 @@
     color: #2acfff !important;
   }
   
+  p {
+    word-break: break-all;
+    white-space: normal;
+}
+
   /* make solution */
   .none {
     padding-right: 0 !important;

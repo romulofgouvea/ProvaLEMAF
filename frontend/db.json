@@ -36,7 +36,7 @@
           "trip_id": 2,
           "trip_url_image": "http://www.smartrisair.com.br/public/assets/node_modules/semantic-ui/examples/assets/images/wireframe/image.png",
           "trip_name": "Dusit Thani Dubai",
-          "trip_desc": "Tudo que você precisa você encontra aqui. Somente no Dusit Thani Dubai Hotel",
+          "trip_desc": "Tudo que você precisa você encontra aqui. Tudo que você precisa você encontra aqui.  Somente no Dusit Thani Dubai Hotel onde a descrição é muito grande, porque eu to tentando quebrar o layout ou fazer os testes com ele",
           "trip_coin": "€",
           "trip_rate": 5,
           "trip_date": "02/14/2019",

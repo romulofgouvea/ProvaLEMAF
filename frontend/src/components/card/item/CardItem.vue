@@ -10,12 +10,6 @@ export default {
   props: ["trip"],
   components: {
     StarRating
-  },
-  methods: {
-    OnClickCard: function(event) {
-      // router.push({ name: 'Trip', params: { userId: '123' } })
-      console.log("Clicked");
-    }
   }
 };
 </script>
