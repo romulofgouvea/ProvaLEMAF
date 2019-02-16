@@ -1,0 +1,8 @@
+<div class="contain">
+    <ul class="cards row">
+        <li class="cards-item rounded col-sm-12 col-md-12 col-lg-12 col-xl-5" v-bind:key="trip.trip_id"
+            v-for="trip in trips">
+            <CardItem v-bind:trip="trip" />
+        </li>
+    </ul>
+</div>

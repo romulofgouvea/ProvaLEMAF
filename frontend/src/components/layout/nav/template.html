@@ -1,0 +1,68 @@
+<div class="contain">
+    <form @submit="searchTrips">
+        <div class="card card-sobre">
+            <div class="card-body">
+                <div class="row">
+                    <div class="input-group col-4 col-md-3 mb-3 input-icon2 none">
+                        <div class="input-group-prepend">
+                            <span class="input-icon" id="basic-addon1">
+                                <i class="material-icons">location_on</i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-input" v-model="city_name" name="city_name"
+                            placeholder="Pick a city">
+                    </div>
+
+                    <div class="input-group col-4 col-md-3 mb-3 input-icon2 none">
+                        <div class="input-group-prepend">
+                            <span class="input-icon" id="basic-addon1">
+                                <i class="material-icons">calendar_today</i>
+                            </span>
+                        </div>
+
+                        <datepicker v-model="city_date" class="form-input date-input" name="city_date"
+                            style="border: none"></datepicker>
+                    </div>
+
+                    <div class="input-group col-4 col-md-2 mb-3 input-icon2 none">
+                        <div class="input-group-prepend">
+                            <span class="input-icon" id="basic-addon1">
+                                <i class="material-icons">person</i>
+                            </span>
+                        </div>
+                        <select v-model="city_guest" class="form-input">
+                            <option v-for="option in optionsGuest" v-bind:key="option.value"
+                                v-bind:value="option.value">{{ option.text }}</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group col-4 col-md-2 input-icon2 none">
+                        <div class="input-group-prepend">
+                            <span class="input-icon" id="basic-addon1">
+                                <i class="material-icons">class</i>
+                            </span>
+                        </div>
+                        <select v-model="city_class" class="form-input">
+                            <option v-for="option in optionsClass" v-bind:key="option.value"
+                                v-bind:value="option.value">{{ option.text }}</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group col-4 col-md-1 input-icon2 none">
+                        <div class="input-group-prepend">
+                            <span class="input-icon" id="basic-addon1">
+                                <i class="material-icons">credit_card</i>
+                            </span>
+                        </div>
+                        <input type="number" class="form-input" v-model="city_cost" name="city_cost" placeholder="800">
+                    </div>
+                    <div class="input-group col-4 col-md-1 input-icon2 none">
+                        <div class="input-group-prepend"></div>
+                        <input type="submit" value="Submit" class="btn">
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+        </div>
+    </form>
+</div>

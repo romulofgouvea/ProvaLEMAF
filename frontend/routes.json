@@ -1,3 +1,0 @@
-{
-    "/Trips/GetTripsByCity?id=:trip_city": "/Trips/:trip_city"
-}
