@@ -41,9 +41,15 @@ export default {
   display: flex;
 }
 
+@media (min-width: 979px) {
+  .cards-item{
+    max-width: 400px;
+  }
+}
 @media (max-width: 979px) {
   .cards-item {
     flex-direction: column;
   }
+
 }
 </style>

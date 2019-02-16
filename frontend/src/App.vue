@@ -23,10 +23,8 @@ export default {
   },
   data() {
     return {
-      BASE_URL:"http://localhost:64154/api",
-      config:{
-        headers: {'Access-Control-Allow-Origin': '*'}
-      },
+      BASE_URL:"http://localhost:3000",
+      // BASE_URL:"http://localhost:64154/api",
       trips: []
     };
   },

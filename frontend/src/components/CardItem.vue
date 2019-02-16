@@ -14,7 +14,7 @@
             :rating="trip.trip_rate"
           ></star-rating>
         </div>
-        <h4 class="card-name">{{trip.trip_name}}</h4>
+        <h4 class="card-name">teeeeeessssteeee  sdhgasjdasjgjds dsadasjdjjjjdaseoooooooooo dsadasjdjjjjdaseoooooooooo{{trip.trip_name}}</h4>
         <p class="card-desc">{{trip.trip_desc}}</p>
         <h4 class="card-cost">{{trip.trip_cost}} {{trip.trip_coin}}</h4>
       </div>
@@ -40,6 +40,14 @@ export default {
 </script>
 
 <style scoped>
+h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 75ch;
+    max-width: 200px;
+}
+
 img {
   max-width: 150px;
 }
@@ -49,7 +57,17 @@ img {
 .card-rate {
   padding-top: 16px;
 }
+.card-name{
+  font-size: 0.675em;
+  margin: 0;
+}
+.card-desc{
+  font-size: 0.475em;
+  color: gray
+}
 .card-cost {
+  color: #2acfff;
+  font-size: 1em;
   float: left;
 }
 </style>
