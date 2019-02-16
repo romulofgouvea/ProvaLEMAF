@@ -18,6 +18,7 @@ export default {
   },
   data() {
     return {
+      title:'my trips',
       // BASE_URL: "http://localhost:3000", //Teste
       BASE_URL:"http://localhost:64154/api",
       trips: []

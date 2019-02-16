@@ -8,6 +8,11 @@ export default {
   components: {
     Header
   },
+  data(){
+    return{
+      title:''
+    }
+  },
   props: ["trip"],
   methods: {
     OnClickIcon(data) {
