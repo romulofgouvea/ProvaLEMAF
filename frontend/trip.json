@@ -47,7 +47,7 @@
         },
         {
           "trip_city":133,
-          "trip_id": 2,
+          "trip_id": 6,
           "trip_url_image": "https://www.fuiviagens.com.br/fui-viagens/objects/images/2017-06/10202.jpg",
           "trip_name": "Cartagena",
           "trip_desc": "Cartagena das Índias, na Colômbia, é um daqueles destinos que a gente ama visitar: cidade histórica que mescla lugares charmosos com um destino de praia incrível. E não é qualquer praia não: estamos falando de um mar do Caribe, com água cor turquesa e cristalina, formando um azul sem igual. Rodeado por areias branquinhas, a cidade possui boas opções de passeios, que variam desde conhecer praias próximas a desvendar os segredos e histórias da cidade.",
@@ -69,7 +69,7 @@
           "trip_date": "2019/02/14",
           "trip_class": 1,
           "trip_guest": 1,
-          "trip_cost": 1800
+          "trip_cost": 300
         },
         {
           "trip_city":131,

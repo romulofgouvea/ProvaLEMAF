@@ -1,10 +1,16 @@
 
-<template src="./template.html"></template>
+<template >
+  <div>
+    <Header v-bind:title="title"/>
+    <CardHeader v-on:search-trips="searchTrips"/>
+    <Cards v-bind:trips="trips"/>
+  </div>
+</template>
 
 <script>
-import Header from "../layout/header/Header";
-import CardHeader from "../layout/nav/CardHeader";
-import Cards from "../card/Cards";
+import Header from "../../components/layout/header/Header";
+import CardHeader from "../../components/layout/header/nav/CardHeader";
+import Cards from "../../components/card/Cards";
 
 import axios from "axios";
 axios.defaults.withCredentials = true;
@@ -19,8 +25,8 @@ export default {
   data() {
     return {
       title: "my trips",
-      // BASE_URL: "http://localhost:3000", //Teste
-      BASE_URL: "http://localhost:64154/api",
+      BASE_URL: "http://localhost:3000", //Teste
+      // BASE_URL: "http://localhost:64154/api",
       temp: [],
       trips: [],
       cities: []
@@ -41,13 +47,7 @@ export default {
     },
     getTripsByCity(searchTrips) {
       return axios
-        .get(
-          this.BASE_URL +
-            "/Trips?trip_city=" +
-            searchTrips.city_id +
-            "&trip_date=" +
-            searchTrips.city_date
-        )
+        .get( this.BASE_URL + "/Trips?trip_city=" +searchTrips.city_id + "&trip_date=" + searchTrips.city_date )
         .then(resTrips => {
           let arrayTemp = [];
           resTrips.data.filter(filTrips => {
@@ -71,7 +71,10 @@ export default {
 
       this.cities.filter(filCity => {
         if (searchTrips.city_name === filCity.city_name) {
-          searchTrips = Object.assign({ 'city_id': filCity.city_id }, searchTrips);
+          searchTrips = Object.assign(
+            { city_id: filCity.city_id },
+            searchTrips
+          );
           return this.getTripsByCity(searchTrips);
         }
       });
