@@ -4,7 +4,6 @@
 <script>
 import StarRating from "vue-star-rating";
 
-
 export default {
   name: "CardItem",
   props: ["trip"],

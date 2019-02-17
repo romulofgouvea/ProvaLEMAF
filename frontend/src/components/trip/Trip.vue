@@ -3,10 +3,13 @@
 
 <script>
 import Header from "../layout/header/Header";
+import StarRating from "vue-star-rating";
+
 export default {
   name: "Trip",
   components: {
-    Header
+    Header,
+    StarRating
   },
   data(){
     return{
