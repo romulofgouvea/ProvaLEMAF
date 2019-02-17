@@ -4,8 +4,8 @@ import router from './router'
 
 // Importing CSS GLOBAL
 import './style.css';
-// import './src/assets/styles/css/bootstrap.min.css';
-// require('bootstrap');
+
+Vue.use(require('vue-moment'));
 
 Vue.config.productionTip = false
 

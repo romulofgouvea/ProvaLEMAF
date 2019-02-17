@@ -1,6 +1,5 @@
 <div class="contain">
-    <!-- <form @submit="searchTrips"> -->
-    <form @submit="searchTrips">
+    <form @change="formChange">
         <div class="card card-sobre">
             <div class="card-body">
                 <div class="row">
@@ -10,8 +9,8 @@
                                 <i class="material-icons">location_on</i>
                             </span>
                         </div>
-                        <input type="text" class="form-input" v-model="city_name" 
-                            name="city_name" placeholder="Pick a city">
+                        <input type="text" class="form-input" v-model="city_name" name="city_name"
+                            placeholder="Pick a city">
                     </div>
 
                     <div class="input-group col-4 col-md-3 mb-3 input-icon2 none">
@@ -22,7 +21,7 @@
                         </div>
 
                         <datepicker v-model="city_date" class="form-input date-input" name="city_date"
-                            style="border: none"></datepicker>
+                            style="border: none" format="MMM, dd,yyyy" :disabledDates="disabledDates"></datepicker>
                     </div>
 
                     <div class="input-group col-4 col-md-2 mb-3 input-icon2 none">
@@ -57,12 +56,7 @@
                         </div>
                         <input type="number" class="form-input" v-model="city_cost" name="city_cost" placeholder="800">
                     </div>
-                    <div class="input-group col-4 col-md-1 input-icon2 none">
-                        <div class="input-group-prepend"></div>
-                        <input type="submit" value="Submit" class="btn">
-                    </div>
-                </div>
-                <!-- row -->
+                </div><!-- row -->
             </div>
         </div>
     </form>

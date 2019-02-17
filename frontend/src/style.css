@@ -26,12 +26,13 @@
   select {
     border: none;
     color: #2acfff !important;
+    max-width: 100%;
   }
   
   p {
     word-break: break-all;
     white-space: normal;
-}
+  }
 
   /* make solution */
   .none {
@@ -39,4 +40,11 @@
     border: none;
     text-decoration: none;
     color: #2acfff !important;
+  }
+
+  @media (max-width: 979px) {
+    /* correção bug calendar adaptado */
+    .vdp-datepicker__calendar{ 
+      margin-left: -130px !important;
+    }
   }

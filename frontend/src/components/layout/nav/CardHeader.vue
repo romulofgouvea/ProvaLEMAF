@@ -30,20 +30,26 @@ export default {
       ],
       city_name: "",
       city_date: new Date(),
-      city_cost: 0
+      city_cost: 0,
+      disabledDates: {
+        to: new Date()
+      }
     };
   },
   methods: {
-    searchTrips(e) {
+    formChange(e) {
       e.preventDefault();
+
       const newSearch = {
         city_name: this.city_name,
+        // city_date: moment(this.city_date).format('yyyy/MM/dd'),
         city_date: this.city_date,
         city_cost: this.city_cost,
         city_guest: parseInt(this.city_guest),
         city_class: parseInt(this.city_class)
       };
       this.$emit("search-trips", newSearch);
+      console.log("emit");
     }
   }
 };
