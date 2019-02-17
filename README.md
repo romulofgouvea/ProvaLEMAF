@@ -18,7 +18,7 @@ Abra o Visual Stúdio, clique em:
 arquivo -> abrir -> Projeto/Solução
 ```
 
-vá até o local da pasta do projeto baixado, selecione a pasta:
+vá até o LOCAL DA PASTA do projeto clonado, selecione a PASTA:
 
 ```bash
 ProvaLEMAF -> backend -> backend -> backend.CSPROJ
@@ -29,6 +29,11 @@ Após carregado e aberto, pressione **F5** para a execução do projeto, após s
 
 Obs: Não FECHE, se não o servidor vai PARAR.
 
+A API está rodando no localhost com a porta **64154**, visto na URL:
+
+```bash
+http://localhost:64154
+```
 
 ## Front-end
 
@@ -53,17 +58,12 @@ Para executar o projeto execute o dcomando abaixo no terminal:
 npm run serve
 ```
 
-Após isso suas duas aplicações estão funcionando:
-
-sendo API rodando no localhost com a porta **64154**, visto na URL:
-```bash
-http://localhost:64154
-```
-e a aplicação front-end com a porta **8080** na URL: 
+Após isso suas duas aplicações estão funcionando e a aplicação front-end com a porta **8080** na URL: 
 ```bash
 http://localhost:8080
 ```
 
+### Teste API
 Caso queira testar a API sem que esteja com o front-end aberto, instale uma aplicação chamada **Postman** usada para testar requisições em API's, Selecione o método GET e Cole a URL para consultar as viagens:
 
 ```bash
@@ -77,3 +77,10 @@ para consultar as viagens para a cidade de Id: 132:
 ```bash
 http://localhost:64154/api/Trips?trip_city=132
 ```
+
+### Teste API
+
+Exemplos de entrada do Aplicativo:
+Dubai, data atual, 1 guest, First Class, 1000
+
+Chile, data atual, 1 guest, First Class, 1000
