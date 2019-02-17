@@ -46,7 +46,13 @@ export default {
     },
     getTripsByCity(searchTrips) {
       return axios
-        .get( this.BASE_URL + "/Trips?trip_city=" +searchTrips.city_id + "&trip_date=" + searchTrips.city_date )
+        .get(
+          this.BASE_URL +
+            "/Trips?trip_city=" +
+            searchTrips.city_id +
+            "&trip_date=" +
+            searchTrips.city_date
+        )
         .then(resTrips => {
           let arrayTemp = [];
           resTrips.data.filter(filTrips => {
@@ -69,7 +75,7 @@ export default {
       }
 
       this.cities.filter(filCity => {
-        if (searchTrips.city_name === filCity.city_name) {
+        if ( this.removeAcento(searchTrips.city_name.toLowerCase()) === this.removeAcento(filCity.city_name.toLowerCase()) ) {
           searchTrips = Object.assign(
             { city_id: filCity.city_id },
             searchTrips
@@ -77,6 +83,16 @@ export default {
           return this.getTripsByCity(searchTrips);
         }
       });
+    },
+    removeAcento(text) {
+      text = text.toLowerCase();
+      text = text.replace(new RegExp("[ÁÀÂÃ]", "gi"), "a");
+      text = text.replace(new RegExp("[ÉÈÊ]", "gi"), "e");
+      text = text.replace(new RegExp("[ÍÌÎ]", "gi"), "i");
+      text = text.replace(new RegExp("[ÓÒÔÕ]", "gi"), "o");
+      text = text.replace(new RegExp("[ÚÙÛ]", "gi"), "u");
+      text = text.replace(new RegExp("[Ç]", "gi"), "c");
+      return text;
     }
   },
   created() {

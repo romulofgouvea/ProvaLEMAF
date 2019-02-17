@@ -81,6 +81,9 @@ http://localhost:64154/api/Trips?trip_city=132
 ### Teste API
 
 Exemplos de entrada do Aplicativo:
+
 Dubai, data atual, 1 guest, First Class, 1000
 
 Chile, data atual, 1 guest, First Class, 1000
+
+colombia, data atual, 2 guest, First Class, 1000
