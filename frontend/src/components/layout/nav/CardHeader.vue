@@ -3,6 +3,7 @@
 
 <script>
 import Datepicker from "vuejs-datepicker";
+import moment from "moment";
 
 export default {
   name: "CardHeader",
@@ -42,8 +43,7 @@ export default {
 
       const newSearch = {
         city_name: this.city_name,
-        // city_date: moment(this.city_date).format('yyyy/MM/dd'),
-        city_date: this.city_date,
+        city_date: moment(new Date()).format("YYYY/MM/DD"),
         city_cost: this.city_cost,
         city_guest: parseInt(this.city_guest),
         city_class: parseInt(this.city_class)

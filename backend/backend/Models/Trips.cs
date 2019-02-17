@@ -5,6 +5,9 @@ using System.Web;
 
 namespace backendAPI.Models
 {
+    /// <summary>
+    /// Classe responsavel por abstrair caracteristicas relacionadas a uma viagem
+    /// </summary>
     public class Trip
     {
         public int trip_city { get; set; }
@@ -19,6 +22,20 @@ namespace backendAPI.Models
         public int trip_guest { get; set; }
         public int trip_cost { get; set; }
 
+        /// <summary>
+        /// Construtor Trip contém os seguintes parametros para a definição do objeto viagem
+        /// </summary>
+        /// <param name="id_city"> Identificador da cidade relacionado a viagem </param>
+        /// <param name="id"> Identificador unico da viagem  </param>
+        /// <param name="url_img"> URL apontando diretamente para uma imagem sendo no servidor ou externa </param>
+        /// <param name="name"> nome da viagem </param>
+        /// <param name="desc"> Descrição da viagem </param>
+        /// <param name="coin"> tipo de moeda que está sendo oferecida a viagem </param>
+        /// <param name="rate"> avaliações relacionadas a viagem </param>
+        /// <param name="date">  data da viagem </param>
+        /// <param name="typeClass"> Tipo de classe que é oferecida na viagem </param>
+        /// <param name="guest">  quantidade de pessoas que é oferecido na viagem </param>
+        /// <param name="cost"> custo da viagem </param>
         public Trip(int id_city, int id, string url_img, string name,
             string desc, string coin, double rate, string date, int typeClass, int guest, int cost)
         {

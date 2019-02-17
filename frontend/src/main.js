@@ -5,8 +5,6 @@ import router from './router'
 // Importing CSS GLOBAL
 import './style.css';
 
-Vue.use(require('vue-moment'));
-
 Vue.config.productionTip = false
 
 new Vue({

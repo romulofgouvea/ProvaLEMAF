@@ -18,47 +18,68 @@ export default {
   },
   data() {
     return {
-      title:'my trips',
+      title: "my trips",
       // BASE_URL: "http://localhost:3000", //Teste
-      BASE_URL:"http://localhost:64154/api",
-      trips: []
+      BASE_URL: "http://localhost:64154/api",
+      temp: [],
+      trips: [],
+      cities: []
     };
   },
   methods: {
-    searchTrips(searchTrips) {
-      axios
-        .get(this.BASE_URL + "/City")
-        .then(resCity =>
-          resCity.data.filter(filCity => {
-            if (searchTrips.city_name === filCity.city_name) {
-              //console.log("Cidade: ", filCity.city_name, filCity.city_id);
-              return axios
-                .get(this.BASE_URL + "/Trips?trip_city=" + filCity.city_id)
-                .then(resTrips => {
-                  let arrayTemp = [];
-                  resTrips.data.filter(filTrips => {
-                    if (
-                      filTrips.trip_cost <= searchTrips.city_cost &&
-                      filTrips.trip_guest <= searchTrips.city_guest &&
-                      filTrips.trip_class === searchTrips.city_class
-                    ) {
-                      arrayTemp.push(filTrips);
-                    }
-                  });
-                  return (this.trips = arrayTemp);
-                })
-                .catch(err => console.log("Error: " + err));
-            }
-          })
-        )
+    getAllTrips() {
+      return axios
+        .get(this.BASE_URL + "/Trips", { withCredentials: true })
+        .then(res => (this.trips = this.temp = res.data))
         .catch(err => console.log("Error: " + err));
+    },
+    getAllCities() {
+      return axios
+        .get(this.BASE_URL + "/City")
+        .then(resCity => (this.cities = resCity.data))
+        .catch(err => console.log("Error: " + err));
+    },
+    getTripsByCity(searchTrips) {
+      return axios
+        .get(
+          this.BASE_URL +
+            "/Trips?trip_city=" +
+            searchTrips.city_id +
+            "&trip_date=" +
+            searchTrips.city_date
+        )
+        .then(resTrips => {
+          let arrayTemp = [];
+          resTrips.data.filter(filTrips => {
+            if (
+              filTrips.trip_cost <= searchTrips.city_cost &&
+              filTrips.trip_guest === searchTrips.city_guest &&
+              filTrips.trip_class === searchTrips.city_class
+            ) {
+              arrayTemp.push(filTrips);
+            }
+          });
+
+          return (this.trips = arrayTemp);
+        })
+        .catch(err => console.log("Error: " + err));
+    },
+    searchTrips(searchTrips) {
+      if (searchTrips.city_name === "") {
+        this.trips = this.temp;
+      }
+
+      this.cities.filter(filCity => {
+        if (searchTrips.city_name === filCity.city_name) {
+          searchTrips = Object.assign({ 'city_id': filCity.city_id }, searchTrips);
+          return this.getTripsByCity(searchTrips);
+        }
+      });
     }
   },
   created() {
-    axios
-      .get(this.BASE_URL + "/Trips", { withCredentials: true })
-      .then(res => (this.trips = res.data))
-      .catch(err => console.log("Error: " + err));
+    this.getAllTrips();
+    this.getAllCities();
   }
 };
 </script>

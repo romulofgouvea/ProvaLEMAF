@@ -1,5 +1,8 @@
 <div class="contain">
     <ul class="cards row">
+        
+        <!-- <h1>AQUI {{ trips  }}</h1> -->
+
         <li class="cards-item rounded col-sm-12 col-md-12 col-lg-12 col-xl-5" v-bind:key="trip.trip_id"
             v-for="trip in trips" v-on:click="OnClickCard(trip)">
             <CardItem v-bind:trip="trip" />

@@ -9,46 +9,53 @@ using System.Web.Http.Cors;
 
 namespace backendAPI.Controllers
 {
-    //[EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CityController : ApiController
     {
-        //[HttpGet]
-        //public List<City> getCity()
-        //{
-        //    return cities;
-        //}
-
-        // OR
-
-        Random rnd = new Random();
+        Random rnd = new Random(); // Importação utilizada para a geração de numeros randons
         private static List<City> cities = new List<City>();
 
+        /// <summary>
+        /// Construtor: usado para carregar as configurações iniciais da classe
+        /// </summary>
         public CityController()
         {
             this.fakeData();
         }
+
+        /// <summary>
+        /// Este metodo e responsavel por gerar uma lista previa dos dados de Cidades para que a API seja testada
+        /// </summary>
         private void fakeData()
         {
             if (cities.Count == 0)
             {
-                cities.Add(new City(130, "Lavras"));
-                cities.Add(new City(131, "São Paulo"));
+                cities.Add(new City(130, "Chile"));
+                cities.Add(new City(131, "Brazil"));
                 cities.Add(new City(132, "Dubai"));
-                cities.Add(new City(133, "Rio de Janeiro"));
+                cities.Add(new City(133, "Colômbia"));
             }
         }
 
-        // api/City
+        /// <summary>
+        /// Este metodo e responsavel por retornar a lista completa dos dados relacionados à cidades armazenada.
+        /// api/City
+        /// </summary>
         public List<City> Get() => cities;
 
-        //// GET api/City/1
+        /// <summary>
+        /// Este metodo e responsavel por retornar uma lista de dados relacionados a 
+        /// um Identificador(ID) da cidade especifico passado por parametro
+        /// GET api/City/1
+        /// </summary>
         public City Get(int id) => cities.SingleOrDefault(c => c.city_id == id);
 
 
-        //criar o post com o form
+        /// <summary>
+        /// Este metodo e responsavel por cadastrar uma cidade via POST, através da URL
+        /// </summary>
         public void Post(string city_name)
         {
-            int city_id = rnd.Next(999);// gerando fake id random(porque está sem BD)
+            int city_id = rnd.Next(999);// gerando id random falso, pois está sem Banco de dados(BD) (Deve ser criado pelo BD)
             if (!string.IsNullOrEmpty(city_name))
             {
                 cities.Add(new City(city_id, city_name));
